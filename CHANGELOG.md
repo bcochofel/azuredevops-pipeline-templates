@@ -2,6 +2,12 @@
 ## [Unreleased]
 
 
+<a name="0.2.1"></a>
+## [0.2.1] - 2021-02-13
+### Fix
+- template name
+
+
 <a name="0.2.0"></a>
 ## [0.2.0] - 2021-02-13
 ### Feat
@@ -12,9 +18,13 @@
 - changelog
 - gh actions name
 
+### Pull Requests
+- Merge pull request [#1](https://github.com/bcochofel/azuredevops-pipeline-templates/issues/1) from bcochofel/gitversion
+
 
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-02-13
 
-[Unreleased]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.2.0...HEAD
+[Unreleased]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.2.1...HEAD
+[0.2.1]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.1.0...0.2.0
