@@ -1,0 +1,44 @@
+parameters:
+  - name: pool
+    type: object
+    default:
+      vmImage: ubuntu-18.04
+
+  - name: python_version
+    type: string
+    default: "3.9"
+
+jobs:
+  - job: precommit
+    pool: ${{ parameters.pool }}
+    variables:
+      PRE_COMMIT_HOME: $(Pipeline.Workspace)/pre-commit-cache
+
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: ${{ parameters.python_version }}
+
+    - task: Bash@3
+      displayName: set version variables
+      inputs:
+        targetType: 'inline'
+        script: |
+          echo "##vso[task.setvariable variable=PY]$(python -VV)"
+
+    - task: CacheBeta@0
+      inputs:
+        key: pre-commit | "4" | .pre-commit-config.yaml | "$(PY)"
+        path: $(PRE_COMMIT_HOME)
+
+    - task: Bash@3
+      displayName: install pre-commit
+      inputs:
+        targetType: 'inline'
+        script: python -m pip install --upgrade pre-commit
+
+    - task: Bash@3
+      displayName: run pre-commit
+      inputs:
+        targetType: 'inline'
+        script: pre-commit run --all-files --show-diff-on-failure
