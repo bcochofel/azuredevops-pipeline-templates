@@ -1,0 +1,43 @@
+parameters:
+  - name: pool
+    type: object
+    default:
+      vmImage: ubuntu-18.04
+
+  - name: version
+    type: string
+    default: "5.x"
+
+  - name: debug
+    type: boolean
+    default: false
+
+jobs:
+  - job: semverTag
+    displayName: Semantic Version Annotated Tag
+    pool: ${{ parameters.pool }}
+
+    steps:
+      - checkout: self
+        persistCredentials: true
+
+      - template: tools/gitVersion.yml
+        parameters:
+          version: ${{ parameters.version }}
+          debug: ${{ parameters.debug }}
+
+      - task: Bash@3
+        displayName: Git global config
+        inputs:
+          targetType: 'inline'
+          script: |
+            git config --global user.email "${BUILD_REQUESTEDFOREMAIL}"
+            git config --global user.name "${BUILD_REQUESTEDFOR}"
+
+      - task: Bash@3
+        displayName: Git annotated tag
+        inputs:
+          targetType: 'inline'
+          script: |
+            git tag -a $(GitVersion.SemVer) -m "Tagged version $(GitVersion.SemVer)"
+            git push origin $(GitVersion.SemVer)
