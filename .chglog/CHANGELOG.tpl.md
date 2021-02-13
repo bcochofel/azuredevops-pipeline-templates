@@ -1,4 +1,3 @@
-
 {{ if .Versions -}}
 <a name="unreleased"></a>
 ## [Unreleased]
