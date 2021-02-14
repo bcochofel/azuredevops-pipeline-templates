@@ -2,10 +2,19 @@
 ## [Unreleased]
 
 
+<a name="0.5.2"></a>
+## [0.5.2] - 2021-02-14
+### Fix
+- changelog push
+
+
 <a name="0.5.1"></a>
 ## [0.5.1] - 2021-02-14
 ### Fix
 - run generate changelog for CI
+
+### Pull Requests
+- Merge pull request [#7](https://github.com/bcochofel/azuredevops-pipeline-templates/issues/7) from bcochofel/test_changelog
 
 
 <a name="0.5.0"></a>
@@ -81,7 +90,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-02-13
 
-[Unreleased]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.1...HEAD
+[Unreleased]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.2...HEAD
+[0.5.2]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.1...0.5.2
 [0.5.1]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.0...0.5.1
 [0.5.0]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.3.0...0.4.0
