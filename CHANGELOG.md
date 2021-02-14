@@ -6,6 +6,7 @@
 ## [0.4.0] - 2021-02-14
 ### Docs
 - update
+- update
 - update documentation
 
 ### Feat
