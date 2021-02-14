@@ -29,6 +29,12 @@ stages:
 The `endpoint` is a Service Connection to GitHub. You need this to get
 repositories outside Azure DevOps.
 
+**NOTE: You should always use ref to get a specific tag instead of master.
+Check [this](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema%2Cparameter-schema#resources)
+for more info.**
+
+You can use [this](https://github.com/bcochofel/azuredevops-pipelines-demo) repository for some examples on how to use the templates included here.
+
 ## pre-commit hooks
 
 Read the [pre-commit hooks](docs/pre-commit-hooks.md) document for more info.

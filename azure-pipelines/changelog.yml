@@ -4,13 +4,17 @@ parameters:
     default:
       vmImage: ubuntu-18.04
 
+  - name: install
+    type: boolean
+    default: true
+
   - name: debug
     type: boolean
     default: false
 
 jobs:
-  - job: semverTag
-    displayName: Semantic Version Annotated Tag
+  - job: Changelog
+    displayName: Auto generate Changelog
     pool: ${{ parameters.pool }}
     variables:
       - name: System.Debug
@@ -26,10 +30,6 @@ jobs:
 
       - template: tools/git_global_config.yml
 
-      - task: Bash@3
-        displayName: Git annotated tag
-        inputs:
-          targetType: 'inline'
-          script: |
-            git tag -a $(GitVersion.SemVer) -m "Tagged version $(GitVersion.SemVer)"
-            git push origin $(GitVersion.SemVer)
+      - template: tools/install_git-chglog.yml
+        parameters:
+          install: ${{ parameters.install }}

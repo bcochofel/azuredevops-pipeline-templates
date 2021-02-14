@@ -1,0 +1,31 @@
+parameters:
+  - name: install
+    type: boolean
+    default: true
+
+  - name: version
+    type: string
+    default: "0.10.0"
+
+steps:
+  - task: Bash@3
+    displayName: "[git-chglog install]"
+    condition: and(succeeded(), eq('${{ parameters.install }}', true))
+    inputs:
+      targetType: 'inline'
+      script: |
+        set -eu
+        curl -sL https://github.com/git-chglog/git-chglog/releases/download/v${VER}/git-chglog_${VER}_linux_amd64.tar.gz --output changelog.tar.gz
+        tar zxf changelog.tar.gz
+        echo "##vso[task.prependpath]$(Build.SourcesDirectory)"
+    env:
+      VER: ${{ parameters.version }}
+
+  - task: Bash@3
+    displayName: "[git-chglog version]"
+    condition: and(succeeded(), eq('${{ parameters.install }}', true))
+    inputs:
+      targetType: 'inline'
+      script: |
+        set -eu
+        git-chglog --version

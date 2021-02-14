@@ -4,15 +4,26 @@ parameters:
     default:
       vmImage: ubuntu-18.04
 
+  - name: debug
+    type: boolean
+    default: false
+
   - name: python_version
     type: string
     default: "3.9"
+
+  - name: install
+    type: boolean
+    default: true
 
 jobs:
   - job: precommit
     pool: ${{ parameters.pool }}
     variables:
-      PRE_COMMIT_HOME: $(Pipeline.Workspace)/pre-commit-cache
+      - name: System.Debug
+        value: ${{ parameters.debug }}
+      - name: PRE_COMMIT_HOME
+        value: $(Pipeline.Workspace)/pre-commit-cache
 
     steps:
     - task: UsePythonVersion@0
@@ -33,6 +44,7 @@ jobs:
 
     - task: Bash@3
       displayName: install pre-commit
+      condition: and(succeeded(), eq('${{ parameters.install }}', true))
       inputs:
         targetType: 'inline'
         script: python -m pip install --upgrade pre-commit
