@@ -2,11 +2,14 @@
 ## [Unreleased]
 
 
-<a name="0.3.1"></a>
-## [0.3.1] - 2021-02-14
+<a name="0.4.0"></a>
+## [0.4.0] - 2021-02-14
 ### Docs
 - update
 - update documentation
+
+### Feat
+- changelog git-chglog
 
 
 <a name="0.3.0"></a>
@@ -62,8 +65,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-02-13
 
-[Unreleased]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.3.1...HEAD
-[0.3.1]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.3.0...0.3.1
+[Unreleased]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.4.0...HEAD
+[0.4.0]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.3.0...0.4.0
 [0.3.0]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.2.3...0.3.0
 [0.2.3]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.2.2...0.2.3
 [0.2.2]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.2.1...0.2.2
