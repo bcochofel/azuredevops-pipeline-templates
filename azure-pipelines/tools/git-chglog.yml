@@ -1,0 +1,37 @@
+parameters:
+  - name: configDir
+    type: string
+    default: ".chglog/config.yml"
+
+  - name: output
+    type: string
+    default: "CHANGELOG.md"
+
+  - name: nextTag
+    type: string
+    default: ""
+
+steps:
+  - task: Bash@3
+    displayName: "Generate Changelog"
+    inputs:
+      targetType: 'inline'
+      script: |
+        set -eu
+        git-chglog -c "${CONFIG_DIR}" --next-tag "${NEXT_TAG}" -o "${OUTPUT}"
+    env:
+      CONFIG_DIR: ${{ parameters.configDir }}
+      NEXT_TAG: ${{ parameters.nextTag }}
+      OUTPUT: ${{ parameters.output }}
+
+  - task: Bash@3
+    displayName: "Commit changes"
+    inputs:
+      targetType: 'inline'
+      script: |
+        set -eu
+        git add ${OUTPUT}
+        git commit -m "Auto generated CHANGELOG"
+        git push
+    env:
+      OUTPUT: ${{ parameters.output }}

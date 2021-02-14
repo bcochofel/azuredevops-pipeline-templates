@@ -33,3 +33,7 @@ jobs:
       - template: tools/install_git-chglog.yml
         parameters:
           install: ${{ parameters.install }}
+
+      - template: tools/git-chglog.yml
+        parameters:
+          nextTag: $(GitVersion.SemVer)
