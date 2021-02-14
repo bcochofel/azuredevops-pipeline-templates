@@ -23,6 +23,17 @@ pre-commit template.
 | python_version | string | Python version to use | "3.9" | no |
 | install | boolean | Whether or not to install pre-commit | true | no |
 
+## git-chglog
+
+git-chglog template.
+
+### git-chglog parameters
+
+| name | type | description | default | required |
+| ---- | ---- | ----------- | ------- | -------- |
+| install | boolean | Whether or not to install git-chglog | true | no |
+| version | string | git-chglog version to install | "0.10.0" | no |
+
 ## References
 
 * [Azure DevOps GitTools bundle](https://marketplace.visualstudio.com/items?itemName=gittools.gittools)

@@ -1,0 +1,8 @@
+steps:
+  - task: Bash@3
+    displayName: Git global config
+    inputs:
+      targetType: 'inline'
+      script: |
+        git config --global user.email "${BUILD_REQUESTEDFOREMAIL}"
+        git config --global user.name "${BUILD_REQUESTEDFOR}"
