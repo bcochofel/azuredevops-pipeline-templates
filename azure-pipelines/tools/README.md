@@ -15,14 +15,14 @@ GitVersion template.
 
 git-chglog template.
 
-The `CHANGELOG` is only generated for Continuous Integration Builds.
-
 ### git-chglog parameters
 
 | name | type | description | default | required |
 | ---- | ---- | ----------- | ------- | -------- |
 | install | boolean | Whether or not to install git-chglog | true | no |
 | version | string | git-chglog version to install | "0.10.0" | no |
+| useNextTag | boolean | Whether or not to use --nex-tag | false | no |
+| nextTag | string | --next-tag argument (retrieve from GitVersion) | "" | no |
 
 ## References
 

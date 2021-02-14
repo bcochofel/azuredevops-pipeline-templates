@@ -43,3 +43,4 @@ Uses git-chglog to generate `CHANGELOG.md` file using the
 | pool | object | Agent pool | vmImage ubuntu-18.04 | no |
 | debug | boolean | Set pipeline to debug | false | no |
 | install | boolean | Whether or not to install git-chglog | true | no |
+| useNextTag | boolean | Whether or not to use --nex-tag | false | no |
