@@ -6,11 +6,13 @@ Several templates that can be used to keep your pipelines as code [DRY](https://
 
 Uses GitVersion template to calculate semantic version and create Git Annotated Tag.
 
-Parameters:
+### Parameters
 
-* pool: Agent pool object (default vmImage ubuntu-18.04)
-* version: GitVersion version to use
-* debug: Whether or not to show all variables for GitVersion (default false)
+| name | type | description | default | required |
+| ---- | ---- | ----------- | ------- | -------- |
+| pool | object | Agent pool | vmImage ubuntu-18.04 | no |
+| version | string | GitVersion version to use | "5.x" | no |
+| debug | boolean | Whether or not to show all variables for GitVersion | false | no |
 
 This template configures git user.email and user.name using some environment variables from the Agent:
 

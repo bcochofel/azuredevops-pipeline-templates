@@ -2,18 +2,26 @@
 
 ## GitVersion
 
-GitVersion template has 2 optional parameters:
+GitVersion template.
 
-* version: Version to install (default 5.x)
-* debug: Whether or not to print all variables (default false)
+### GitVersion parameters
+
+| name | type | description | default | required |
+| ---- | ---- | ----------- | ------- | -------- |
+| version | string | GitVersion version to use | "5.x" | no |
+| debug | boolean | Whether or not to show all variables for GitVersion | false | no |
 
 ## pre-commit
 
-pre-commit template has 3 optional parameters:
+pre-commit template.
 
-* pool: Agent Pool object (default vmImage ubuntu-18.04)
-* python_version: Python version to use (default 3.9)
-* install: Whether or not to install pre-commit (default true)
+### pre-commit parameters
+
+| name | type | description | default | required |
+| ---- | ---- | ----------- | ------- | -------- |
+| pool | object | Agent pool | vmImage ubuntu-18.04 | no |
+| python_version | string | Python version to use | "3.9" | no |
+| install | boolean | Whether or not to install pre-commit | true | no |
 
 ## References
 
