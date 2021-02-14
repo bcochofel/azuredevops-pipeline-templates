@@ -14,6 +14,7 @@ parameters:
 steps:
   - task: Bash@3
     displayName: "Generate Changelog"
+    condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
     inputs:
       targetType: 'inline'
       script: |
@@ -26,6 +27,7 @@ steps:
 
   - task: Bash@3
     displayName: "Commit changes"
+    condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
     inputs:
       targetType: 'inline'
       script: |
