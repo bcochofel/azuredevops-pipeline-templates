@@ -26,23 +26,15 @@ steps:
       OUTPUT: ${{ parameters.output }}
 
   - task: Bash@3
-    displayName: "Environment variables"
+    displayName: "Commit changes"
+    condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
     inputs:
       targetType: 'inline'
       script: |
         set -eu
-        env
-
-#  - task: Bash@3
-#    displayName: "Commit changes"
-#    condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
-#    inputs:
-#      targetType: 'inline'
-#      script: |
-#        set -eu
-#        git add ${OUTPUT}
-#        git commit -m "Auto generated CHANGELOG"
-#        git push -u origin ${BRANCH}
-#    env:
-#      OUTPUT: ${{ parameters.output }}
-#      BRANCH: $(Build.Repository.Name)
+        git add ${OUTPUT}
+        git commit -m "Auto generated CHANGELOG"
+        git push -u origin ${BRANCH}
+    env:
+      OUTPUT: ${{ parameters.output }}
+      BRANCH: $(Build.SourceBranchName)
