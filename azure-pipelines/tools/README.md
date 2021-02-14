@@ -15,6 +15,8 @@ GitVersion template.
 
 git-chglog template.
 
+The `CHANGELOG` is only generated for Continuous Integration Builds.
+
 ### git-chglog parameters
 
 | name | type | description | default | required |
