@@ -12,6 +12,11 @@ parameters:
     type: boolean
     default: false
 
+  - name: useNextTag
+    type: boolean
+    default: false
+
+
 jobs:
   - job: Changelog
     displayName: Auto generate Changelog
@@ -36,4 +41,5 @@ jobs:
 
       - template: tools/git-chglog.yml
         parameters:
+          useNextTag: ${{ parameters.useNextTag }}
           nextTag: $(GitVersion.SemVer)

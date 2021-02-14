@@ -7,14 +7,30 @@ parameters:
     type: string
     default: "CHANGELOG.md"
 
+  - name: useNextTag
+    type: boolean
+    default: false
+
   - name: nextTag
     type: string
     default: ""
 
 steps:
   - task: Bash@3
-    displayName: "Generate Changelog"
-    condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
+    displayName: "Generate Changelog without --next-tag"
+    condition: and(succeeded(), eq('${{ parameters.useNextTag }}', false))
+    inputs:
+      targetType: 'inline'
+      script: |
+        set -eu
+        git-chglog -c "${CONFIG_DIR}" -o "${OUTPUT}"
+    env:
+      CONFIG_DIR: ${{ parameters.configDir }}
+      OUTPUT: ${{ parameters.output }}
+
+  - task: Bash@3
+    displayName: "Generate Changelog with --next-tag"
+    condition: and(succeeded(), eq('${{ parameters.useNextTag }}', true))
     inputs:
       targetType: 'inline'
       script: |
@@ -27,7 +43,6 @@ steps:
 
   - task: Bash@3
     displayName: "Commit changes"
-    condition: and(succeeded(), in(variables['Build.Reason'], 'IndividualCI', 'BatchedCI'))
     inputs:
       targetType: 'inline'
       script: |
