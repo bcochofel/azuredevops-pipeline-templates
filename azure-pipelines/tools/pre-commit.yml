@@ -8,6 +8,10 @@ parameters:
     type: string
     default: "3.9"
 
+  - name: install
+    type: boolean
+    default: true
+
 jobs:
   - job: precommit
     pool: ${{ parameters.pool }}
@@ -33,6 +37,7 @@ jobs:
 
     - task: Bash@3
       displayName: install pre-commit
+      condition: and(succeeded(), eq('${{ parameters.install }}', true))
       inputs:
         targetType: 'inline'
         script: python -m pip install --upgrade pre-commit
