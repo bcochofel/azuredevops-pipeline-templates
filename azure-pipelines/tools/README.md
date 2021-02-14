@@ -11,18 +11,6 @@ GitVersion template.
 | version | string | GitVersion version to use | "5.x" | no |
 | debug | boolean | Whether or not to show all variables for GitVersion | false | no |
 
-## pre-commit
-
-pre-commit template.
-
-### pre-commit parameters
-
-| name | type | description | default | required |
-| ---- | ---- | ----------- | ------- | -------- |
-| pool | object | Agent pool | vmImage ubuntu-18.04 | no |
-| python_version | string | Python version to use | "3.9" | no |
-| install | boolean | Whether or not to install pre-commit | true | no |
-
 ## git-chglog
 
 git-chglog template.

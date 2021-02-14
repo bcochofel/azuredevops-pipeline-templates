@@ -4,6 +4,10 @@ parameters:
     default:
       vmImage: ubuntu-18.04
 
+  - name: debug
+    type: boolean
+    default: false
+
   - name: python_version
     type: string
     default: "3.9"
