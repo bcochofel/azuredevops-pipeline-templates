@@ -15,6 +15,10 @@ GitVersion template.
 
 git-chglog template.
 
+The message used to commit has the `[skip ci]` option to avoid trigerring a CI build.
+See [this](https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/git-commands?view=azure-devops&tabs=yaml)
+for moe info.
+
 ### git-chglog parameters
 
 | name | type | description | default | required |

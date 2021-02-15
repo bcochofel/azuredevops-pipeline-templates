@@ -48,7 +48,7 @@ steps:
       script: |
         set -eu
         git add ${OUTPUT}
-        git commit -m "Auto generated CHANGELOG"
+        git commit -m "Auto generated CHANGELOG [skip ci]"
         git push -u origin ${BRANCH}
     env:
       OUTPUT: ${{ parameters.output }}

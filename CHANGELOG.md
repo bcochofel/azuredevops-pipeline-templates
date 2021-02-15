@@ -2,10 +2,19 @@
 ## [Unreleased]
 
 
+<a name="0.6.0"></a>
+## [0.6.0] - 2021-02-15
+### Feat
+- skip ci parameter for commit message
+
+
 <a name="0.5.5"></a>
 ## [0.5.5] - 2021-02-14
 ### Fix
 - git-chglog --next-tag parameter
+
+### Pull Requests
+- Merge pull request [#11](https://github.com/bcochofel/azuredevops-pipeline-templates/issues/11) from bcochofel/change_git-chglog
 
 
 <a name="0.5.4"></a>
@@ -117,7 +126,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-02-13
 
-[Unreleased]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.5...HEAD
+[Unreleased]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.6.0...HEAD
+[0.6.0]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.5...0.6.0
 [0.5.5]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.4...0.5.5
 [0.5.4]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.3...0.5.4
 [0.5.3]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.2...0.5.3
