@@ -2,10 +2,16 @@
 ## [Unreleased]
 
 
+<a name="0.6.1"></a>
+## [0.6.1] - 2021-07-19
+
 <a name="0.6.0"></a>
 ## [0.6.0] - 2021-02-15
 ### Feat
 - skip ci parameter for commit message
+
+### Pull Requests
+- Merge pull request [#12](https://github.com/bcochofel/azuredevops-pipeline-templates/issues/12) from bcochofel/skip_ci_message
 
 
 <a name="0.5.5"></a>
@@ -126,7 +132,8 @@
 <a name="0.1.0"></a>
 ## 0.1.0 - 2021-02-13
 
-[Unreleased]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.6.0...HEAD
+[Unreleased]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.6.1...HEAD
+[0.6.1]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.6.0...0.6.1
 [0.6.0]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.5...0.6.0
 [0.5.5]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.4...0.5.5
 [0.5.4]: https://github.com/bcochofel/azuredevops-pipeline-templates/compare/0.5.3...0.5.4
